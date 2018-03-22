@@ -81,6 +81,7 @@ type UpstreamProxy struct {
 }
 
 func (u *UpstreamProxy) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	p.respectForwardedProto(rw, req)
 	w.Header().Set("GAP-Upstream-Address", u.upstream)
 	if u.auth != nil {
 		r.Header.Set("GAP-Auth", w.Header().Get("GAP-Auth"))
@@ -604,6 +605,12 @@ func (p *OAuthProxy) Proxy(rw http.ResponseWriter, req *http.Request) {
 		}
 	} else {
 		p.serveMux.ServeHTTP(rw, req)
+	}
+}
+
+func (p *OAuthProxy) respectForwardedProto(rw http.ResponseWriter, req *http.Request) {
+	if req.Header.Get("X-Forwarded-Proto") == "http" {
+		http.Redirect(rw, req, fmt.Sprintf("https://%v%v", req.Host, req.URL), http.StatusMovedPermanently)
 	}
 }
 
