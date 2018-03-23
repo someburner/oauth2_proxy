@@ -80,7 +80,6 @@ type UpstreamProxy struct {
 }
 
 func (u *UpstreamProxy) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	p.respectForwardedProto(rw, req)
 	w.Header().Set("GAP-Upstream-Address", u.upstream)
 	if u.auth != nil {
 		r.Header.Set("GAP-Auth", w.Header().Get("GAP-Auth"))
@@ -455,6 +454,7 @@ func getRemoteAddr(req *http.Request) (s string) {
 }
 
 func (p *OAuthProxy) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
+	p.respectForwardedProto(rw, req)
 	switch path := req.URL.Path; {
 	case path == p.RobotsPath:
 		p.RobotsTxt(rw)
