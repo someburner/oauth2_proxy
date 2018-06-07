@@ -110,7 +110,7 @@ func setProxyDirector(proxy *WebsocketReverseProxy) {
 		req.URL.RawQuery = ""
 	}
 }
-func setRewriteTarget(proxy *httputil.ReverseProxy, target string) {
+func setRewriteTarget(proxy *WebsocketReverseProxy, target string) {
 	director := proxy.Director
 	proxy.Director = func(req *http.Request) {
 		director(req)
