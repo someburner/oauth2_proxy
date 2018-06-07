@@ -213,6 +213,7 @@ Usage of oauth2_proxy:
   -request-logging: Log requests to stdout (default true)
   -request-logging-format: Template for request log lines (see "Logging Format" paragraph below)
   -resource string: The resource that is protected (Azure AD only)
+  -rewrite-target: trim or rewrite proxy prefix. Eg, `/myapp` in `/myapp/index` can be trimmed to make the endpoint happy
   -scope string: OAuth scope specification
   -set-xauthrequest: set X-Auth-Request-User and X-Auth-Request-Email response headers (useful in Nginx auth_request mode)
   -signature-key string: GAP-Signature request signature key (algorithm:secretkey)
