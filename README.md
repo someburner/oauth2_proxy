@@ -1,6 +1,13 @@
 oauth2_proxy
 =================
 
+
+```sh
+sed -i -e "s|bitly\/oauth2_proxy|someburner\/oauth2_proxy|g" providers/azure.go
+```
+
+
+
 A reverse proxy and static file server that provides authentication using Providers (Google, GitHub, and others)
 to validate accounts by email, domain or group.
 
