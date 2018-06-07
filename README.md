@@ -181,6 +181,7 @@ Usage of oauth2_proxy:
   -client-secret string: the OAuth Client Secret
   -config string: path to config file
   -cookie-domain string: an optional cookie domain to force cookies to (ie: .yourcompany.com)
+  -cookie-path string: an optional cookie path (eg "/my-app"), defaults to "/"
   -cookie-expire duration: expire timeframe for cookie (default 168h0m0s)
   -cookie-httponly: set HttpOnly cookie flag (default true)
   -cookie-name string: the name of the cookie that the oauth_proxy creates (default "_oauth2_proxy")
