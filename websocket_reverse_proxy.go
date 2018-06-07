@@ -115,4 +115,3 @@ func bufferedBidirCopy(conn1 io.ReadWriteCloser, rw1 *bufio.ReadWriter, conn2 io
 	go copier(&wg, rw2, rw1)
 	wg.Wait()
 }
-
