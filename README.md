@@ -118,6 +118,21 @@ If you are using GitHub enterprise, make sure you set the following to the appro
     -redeem-url="http(s)://<enterprise github host>/login/oauth/access_token"
     -validate-url="http(s)://<enterprise github host>/api/v3"
 
+### Slack Provider
+
+Register a new Slack App to get a ClientID and Client Secret:
+
+1. Go to your applications at: https://api.slack.com/applications
+2. "Create a new App" or choose an existing one
+3. In the application settings, go to "OAuth & Permissions" and add a new redirect URL, e.g. `https://internal.yourcompany.com/oauth2/callback`
+4. Get the Client ID and Client Secret from the "Basic Information" page
+
+Authentication can be restricted to a single team with the `-slack-team` command line or the `slack_team` settings entry. Both require your team's Team ID.
+
+You can get it by creating a token for your workspace: https://api.slack.com/custom-integrations/legacy-tokens
+
+With this token "Test" the auth.test method here: https://api.slack.com/methods/auth.test/test The response contains the Team ID.
+
 ### GitLab Auth Provider
 
 Whether you are using GitLab.com or self-hosting GitLab, follow [these steps to add an application](http://doc.gitlab.com/ce/integration/oauth_provider.html)
