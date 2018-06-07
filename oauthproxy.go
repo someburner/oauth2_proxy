@@ -13,9 +13,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/mbland/hmacauth"
 	"github.com/someburner/oauth2_proxy/cookie"
 	"github.com/someburner/oauth2_proxy/providers"
-	"github.com/mbland/hmacauth"
 )
 
 const SignatureHeader = "GAP-Signature"

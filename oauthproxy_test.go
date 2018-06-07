@@ -15,8 +15,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/someburner/oauth2_proxy/providers"
 	"github.com/mbland/hmacauth"
+	"github.com/someburner/oauth2_proxy/providers"
 	"github.com/stretchr/testify/assert"
 )
 
