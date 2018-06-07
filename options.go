@@ -46,6 +46,7 @@ type Options struct {
 	CookieName     string        `flag:"cookie-name" cfg:"cookie_name" env:"OAUTH2_PROXY_COOKIE_NAME"`
 	CookieSecret   string        `flag:"cookie-secret" cfg:"cookie_secret" env:"OAUTH2_PROXY_COOKIE_SECRET"`
 	CookieDomain   string        `flag:"cookie-domain" cfg:"cookie_domain" env:"OAUTH2_PROXY_COOKIE_DOMAIN"`
+	CookiePath     string        `flag:"cookie-path" cfg:"cookie_path" env:"OAUTH2_PROXY_COOKIE_PATH"`
 	CookieExpire   time.Duration `flag:"cookie-expire" cfg:"cookie_expire" env:"OAUTH2_PROXY_COOKIE_EXPIRE"`
 	CookieRefresh  time.Duration `flag:"cookie-refresh" cfg:"cookie_refresh" env:"OAUTH2_PROXY_COOKIE_REFRESH"`
 	CookieSecure   bool          `flag:"cookie-secure" cfg:"cookie_secure"`
@@ -59,6 +60,7 @@ type Options struct {
 	PassHostHeader        bool     `flag:"pass-host-header" cfg:"pass_host_header"`
 	SkipProviderButton    bool     `flag:"skip-provider-button" cfg:"skip_provider_button"`
 	PassUserHeaders       bool     `flag:"pass-user-headers" cfg:"pass_user_headers"`
+	RewriteTarget         string   `flag:"rewrite-target" cfg:"rewrite_target"`
 	SSLInsecureSkipVerify bool     `flag:"ssl-insecure-skip-verify" cfg:"ssl_insecure_skip_verify"`
 	SetXAuthRequest       bool     `flag:"set-xauthrequest" cfg:"set_xauthrequest"`
 	SkipAuthPreflight     bool     `flag:"skip-auth-preflight" cfg:"skip_auth_preflight"`
@@ -114,6 +116,7 @@ func NewOptions() *Options {
 		ApprovalPrompt:       "force",
 		RequestLogging:       true,
 		RequestLoggingFormat: defaultRequestLoggingFormat,
+		RewriteTarget:        "",
 	}
 }
 

@@ -188,6 +188,7 @@ Usage of oauth2_proxy:
   -client-secret string: the OAuth Client Secret
   -config string: path to config file
   -cookie-domain string: an optional cookie domain to force cookies to (ie: .yourcompany.com)
+  -cookie-path string: an optional cookie path (eg "/my-app"), defaults to "/"
   -cookie-expire duration: expire timeframe for cookie (default 168h0m0s)
   -cookie-httponly: set HttpOnly cookie flag (default true)
   -cookie-name string: the name of the cookie that the oauth_proxy creates (default "_oauth2_proxy")
@@ -219,6 +220,7 @@ Usage of oauth2_proxy:
   -request-logging: Log requests to stdout (default true)
   -request-logging-format: Template for request log lines (see "Logging Format" paragraph below)
   -resource string: The resource that is protected (Azure AD only)
+  -rewrite-target: trim or rewrite proxy prefix. Eg, `/myapp` in `/myapp/index` can be trimmed to make the endpoint happy
   -scope string: OAuth scope specification
   -set-xauthrequest: set X-Auth-Request-User and X-Auth-Request-Email response headers (useful in Nginx auth_request mode)
   -signature-key string: GAP-Signature request signature key (algorithm:secretkey)
